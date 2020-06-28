@@ -1,0 +1,167 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: $font;
+  font-size: 16px;
+  line-height: 1.38;
+  color: $text;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-bold;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+p {
+  margin: 0 0 10px 0;
+  strong {
+  font-weight: 600;
+    font-family: $font-bold;
+  }
+}
+
+a {
+  transition: color .5s;
+  text-decoration: none;
+  color: $link;
+  &:hover {
+    color: $link-hov;
+  }
+}
+
+ol,
+ul {
+  li {
+    padding: 0;
+  }
+}
+
+ul {
+  li {
+    // путь к кастомной картинке пункта ul
+    // list-style-image: url('../img/ul.png');
+  }
+}
+
+//кастомные пункты списка с цифрами
+ol {
+  // list-style: none;
+  // @include counter(li);
+  li::before {
+    // color: $brand;
+  }
+}
+
+input,
+textarea,
+select,
+button {
+  border-radius: 0 !important;
+  outline: none;
+}
+
+input {
+  padding: 3px 10px 5px 10px;
+  color: $text;
+  border: 1px solid $text;
+  &::placeholder {
+    @include placeholder-color($text);
+  }
+}
+
+textarea {
+  resize: none;
+}
+
+input.error,
+textarea.error {
+  border-color: #ed1b24 !important;
+  background: #fbd1d3 !important;
+}
+
+svg {
+  display: block;
+  overflow: visible;
+}
+
+//изменяем цвет выделения текста мышью
+::selection {
+  // background-color: $brand;
+  // color: $brand;
+  // text-shadow: none;
+}
+
+.main-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  //свойство для исправления бага 100vh для мобильных
+  min-height: -moz-available;
+  min-height: -webkit-fill-available;
+  min-height: fill-available;
+  //свойство для плавной прокрутки на яблоках
+
+  -webkit-overflow-scrolling: touch;
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.btn {
+  font-family: 'OpenSans', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1;
+  display: inline-block;
+  padding: 10px 40px;
+  user-select: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color .5s;
+  white-space: nowrap;
+  text-decoration: none;
+  color: #fff;
+  border: none;
+  border-radius: 5px !important;
+  background-color: $highlight;
+  box-shadow: none;
+  &:hover {
+    color: #fff;
+    background-color: $highlight-hov;
+  }
+}

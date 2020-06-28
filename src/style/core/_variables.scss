@@ -1,0 +1,16 @@
+// ***** main colors *******
+$brand: #00407a;
+$highlight: #D83612;
+$highlight-hov: darken($highlight, 5%);
+
+// ***** text colors *******
+$text: #181a19;
+
+// ***** link colors *******
+$link: lighten($brand, 10%);
+$link-hov: lighten($link, 25%);
+
+// ===== fonts =====
+$font:      'Nexa-Regular', sans-serif;
+$font-bold: 'Nexa-Bold', sans-serif;
+$font-thin: 'Nexa-Thin', sans-serif;
