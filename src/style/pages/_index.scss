@@ -1,7 +1,7 @@
 #map {
-cursor: url("../img/cursor.svg"), auto;
   width: 100%;
   height: 100vh;
+  cursor: url('../img/cursor.svg'), auto;
   background-color: #ccc;
 }
 //begin #стилизация карты
@@ -15,19 +15,29 @@ cursor: url("../img/cursor.svg"), auto;
 
 //begin #убираем дефолтные приколы
 .ymaps-2-1-76-balloon__close + .ymaps-2-1-76-balloon__content {
-  margin-right: 0 !important;
+  //margin-right: 0 !important;
 }
 .ymaps-2-1-76-balloon__content {
-  padding: 0 !important;
+  //padding: 0 !important;
 }
 //.ymaps-2-1-76-balloon__close,
 .ymaps-2-1-76-balloon__tail {
   display: none !important;
 }
-.ymaps-2-1-76-balloon__layout{
-  box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.25);
+.ymaps-2-1-76-balloon__layout {
+  //min-width: 325px;
+  box-shadow: 4px 4px 30px rgba(0, 0, 0, .25);
 }
 //end #убираем дефолтные приколы
+.balloon--custom {
+  opacity: .8;
+  .ymaps-2-1-76-balloon__close + .ymaps-2-1-76-balloon__content {
+    margin: 0 !important;
+  }
+  .ymaps-2-1-76-balloon__content {
+    padding: 0 !important;
+  }
+}
 
 .balloon-top {
   position: relative;
@@ -37,6 +47,7 @@ cursor: url("../img/cursor.svg"), auto;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
+
 }
 .balloon-top__info {
   position: relative;
@@ -51,8 +62,8 @@ cursor: url("../img/cursor.svg"), auto;
   color: #e52d04;
 }
 .balloon-top__adress {
+  font-family: $font-bold;
   font-size: 18px;
-  font-family:$font-bold;
   font-weight: bold;
   line-height: 25px;
   max-width: 140px;
@@ -61,12 +72,12 @@ cursor: url("../img/cursor.svg"), auto;
 .balloon-top__object {
   position: absolute;
   right: 0;
-  background-image: url('../img/bg-line.png');
-  background-repeat: no-repeat;
-  background-position: 100% 100%;
   bottom: 0;
   width: 205px;
   min-height: 165px;
+  background-image: url('../img/bg-line.png');
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
   img {
     display: block;
     max-width: 100%;
@@ -80,38 +91,63 @@ cursor: url("../img/cursor.svg"), auto;
 }
 .balloon-body__row {
   display: flex;
-span {
-  padding-right: 3px;
-  font-family:$font-thin;
-  font-size: 14px;
-  line-height: 25px;
-  color: #000000;
-
+  span {
+    font-family: $font-thin;
+    font-size: 14px;
+    line-height: 25px;
+    padding-right: 3px;
+    color: #000;
+  }
 }
-}
 
-.balloon-footer{
+.balloon-footer {
   display: flex;
   justify-content: center;
   padding: 15px 15px 19px 15px;
 }
-.balloon-footer__btn{
-  font-weight: bold;
-  font-family:$font-bold;
+.balloon-footer__btn {
+  font-family: $font-bold;
   font-size: 14px;
+  font-weight: bold;
   line-height: 35px;
-  height: 42px;
-  background-color: #E52D04;
-  border-radius: 21px;
-  color: #FFFFFF;
-  padding: 5px 25px;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 42px;
+  padding: 5px 25px;
   transition: .5s;
+  color: #fff;
+  border-radius: 21px;
+  background-color: #e52d04;
   &:hover {
-  background-color: lighten(#E52D04, 10%);
-    color: #ffffff;
-
+    color: #fff;
+    background-color: lighten(#e52d04, 10%);
   }
+}
+
+.active {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: url('../img/cursor.svg'), auto;
+  transition: .5s;
+  color: #fff;
+  border-radius: 50%;
+  background: #00407a;
+}
+.active--hover {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: url('../img/cursor.svg'), auto;
+  transition: .5s;
+  color: #fff;
+  border-radius: 50%;
+  background-color: tomato;
 }
