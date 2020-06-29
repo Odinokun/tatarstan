@@ -9,11 +9,12 @@ block variables
 block content
   .main-wrap
     //begin content
-    main.main
-      include ../sections/aside
-      #map
+    main.main.error
+      .error__inn
+        .error__item
+          h2.error__title 404
+          span.error__text похоже,<br>Вы свернули не туда...
+          a(href="#").error__btn На главную
     //end content
 
     include ../sections/scripts
-    script(src="https://api-maps.yandex.ru/2.1/?apikey=d9063b73-cd43-48f8-b594-e35195e20ef2&lang=ru_RU")
-    script(src='assets/js/uncompressed.js')
