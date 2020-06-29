@@ -1,0 +1,81 @@
+.aside {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  height: 100vh;
+  background-color: transparent;
+}
+
+//begin #TOP
+.aside-top {
+  display: flex;
+  justify-content: center;
+  padding-top: 126px;
+  background-color: rgba(118, 170, 160, .88);
+  background-image: url('../img/bg-aside.jpg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  box-shadow: 5px 5px 20px rgba(0, 79, 110, .25);
+
+  flex-grow: 1;
+}
+
+.aside-top__logo {
+  width: 150px;
+  height: 150px;
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+//end #TOP
+
+//begin #BOTTOM
+.aside-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 140px;
+  margin-top: 20px;
+  padding: 20px 40px;
+  background-color: rgba(118, 170, 160, .88);
+  background-image: url('../img/bg-aside.jpg');
+  background-repeat: no-repeat;
+  box-shadow: 5px 5px 20px rgba(0, 79, 110, .25);
+}
+
+.aside-bottom__btn {
+  font-family: $font;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1;
+  width: 50%;
+  padding: 12px;
+  cursor: pointer;
+  user-select: none;
+  transition: .5s;
+  color: #005164;
+  border: 2px solid #005164;
+  background-color: transparent;
+
+  will-change: padding;
+  &:nth-child(1) {
+    transform: translateX(1px);
+  }
+  &:nth-child(2) {
+    transform: translateX(-1px);
+  }
+  &.active {
+    padding: 18px 12px;
+    pointer-events: none;
+    background: rgba(255, 255, 255, .35);
+  }
+}
+
+//end #BOTTOM

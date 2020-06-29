@@ -30,7 +30,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font-bold;
+  font-family: $font;
   font-weight: 600;
   margin: 0 0 10px 0;
 }
@@ -38,8 +38,8 @@ h6 {
 p {
   margin: 0 0 10px 0;
   strong {
-  font-weight: 600;
-    font-family: $font-bold;
+    font-family: $font;
+    font-weight: 600;
   }
 }
 
@@ -149,12 +149,12 @@ svg {
   line-height: 1;
   display: inline-block;
   padding: 10px 40px;
-  user-select: none;
   cursor: pointer;
-  text-transform: uppercase;
+  user-select: none;
   transition: background-color .5s;
   white-space: nowrap;
   text-decoration: none;
+  text-transform: uppercase;
   color: #fff;
   border: none;
   border-radius: 5px !important;
