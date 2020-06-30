@@ -1,0 +1,20 @@
+extends ../_template
+
+block variables
+  - var title       = 'Истории Татарстана'
+  - var description = 'Истории Татарстана'
+  - var ogtitle     = 'Истории Татарстана'
+  - var ogimage     = 'assets/img/social.jpg'
+
+block content
+  .main-wrap
+    //begin content
+    main.main.error
+      .error__inn
+        .error__item
+          h2.error__title 404
+          span.error__text похоже,<br>Вы свернули не туда...
+          a(href="#").error__btn На главную
+    //end content
+
+    include ../sections/scripts
