@@ -59,59 +59,9 @@ ul {
   }
 }
 
-ul {
-  li {
-    // путь к кастомной картинке пункта ul
-    // list-style-image: url('../img/ul.png');
-  }
-}
-
-//кастомные пункты списка с цифрами
-ol {
-  // list-style: none;
-  // @include counter(li);
-  li::before {
-    // color: $brand;
-  }
-}
-
-input,
-textarea,
-select,
-button {
-  border-radius: 0 !important;
-  outline: none;
-}
-
-input {
-  padding: 3px 10px 5px 10px;
-  color: $text;
-  border: 1px solid $text;
-  &::placeholder {
-    @include placeholder-color($text);
-  }
-}
-
-textarea {
-  resize: none;
-}
-
-input.error,
-textarea.error {
-  border-color: #ed1b24 !important;
-  background: #fbd1d3 !important;
-}
-
 svg {
   display: block;
   overflow: visible;
-}
-
-//изменяем цвет выделения текста мышью
-::selection {
-  // background-color: $brand;
-  // color: $brand;
-  // text-shadow: none;
 }
 
 .main-wrap {
@@ -132,36 +82,4 @@ svg {
 
 .main {
   flex-grow: 1;
-}
-
-.container {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 30px;
-}
-
-.btn {
-  font-family: 'OpenSans', sans-serif;
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 1;
-  display: inline-block;
-  padding: 10px 40px;
-  cursor: pointer;
-  user-select: none;
-  transition: background-color .5s;
-  white-space: nowrap;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #fff;
-  border: none;
-  border-radius: 5px !important;
-  background-color: $highlight;
-  box-shadow: none;
-  &:hover {
-    color: #fff;
-    background-color: $highlight-hov;
-  }
 }
