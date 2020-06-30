@@ -3,8 +3,8 @@ $(function() {
   // begin SVG for IE
   require('./modules/svg4everybody')();
 
-  // begin no-JS
-  require('./modules/noJs')();
+  // begin padding top in object page
+  require('./modules/objectPaddingTop')();
 
   // begin phone mask
   // require('./modules/maskedinput')();

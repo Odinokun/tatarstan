@@ -5,12 +5,9 @@
 @import 'core/base';
 
 //elements
-//@import 'elements/breadcrumbs';
+@import 'elements/close';
 //@import 'elements/burger';
-//@import 'elements/pagination';
 //@import 'elements/popup';
-//@import 'elements/slickBase';
-// @import 'elements/stickyHeader';
 
 //section
 @import 'sections/aside';
@@ -18,3 +15,4 @@
 //pages
 @import 'pages/index';
 @import 'pages/404';
+@import 'pages/object';

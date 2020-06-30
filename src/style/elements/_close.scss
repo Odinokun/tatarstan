@@ -1,0 +1,50 @@
+.close {
+  position: absolute;
+  z-index: 10;
+  top: 64px;
+  right: 64px;
+  display: block;
+  cursor: pointer;
+
+  @media (max-width: 1024px) and (orientation: landscape) {
+    top: 30px;
+    right: 30px;
+  }
+  @media (max-width: 667px) and (orientation: landscape) {
+    top: 20px;
+    right: 20px;
+  }
+  @media (orientation: portrait) {
+    top: 30px;
+    right: 30px;
+  }
+  @media (max-width: 375px) and (orientation: portrait) {
+    top: 20px;
+    right: 20px;
+  }
+  svg {
+    fill: #000;
+    width: 52px;
+    height: 52px;
+    transition: .5s;
+    @media (max-width: 1024px) and (orientation: landscape) {
+      width: 38px;
+      height: 38px;
+    }
+    @media (max-width: 667px) and (orientation: landscape) {
+      width: 25px;
+      height: 25px;
+    }
+    @media (orientation: portrait) {
+      width: 38px;
+      height: 38px;
+    }
+    @media (max-width: 375px) and (orientation: portrait) {
+      width: 25px;
+      height: 25px;
+    }
+    &:hover {
+      transform: rotate(180deg);
+    }
+  }
+}
