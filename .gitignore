@@ -43,7 +43,6 @@ node_modules/
 bower/
 bower_components/
 dist
-build
 
 ### My files ###
 *.zip
