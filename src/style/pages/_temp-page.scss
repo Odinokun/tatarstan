@@ -1,0 +1,115 @@
+.temp-page {
+  position: relative;
+  padding: 30px 150px;
+  background-image: url('../img/bg-temp.jpg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  @media (max-width: 1440px) and (orientation: landscape) {
+  }
+  @media (max-width: 1024px) and (orientation: landscape) {
+    padding: 30px 95px;
+  }
+  @media (max-width: 667px) and (orientation: landscape) {
+    padding: 77px 63px;
+  }
+  @media (orientation: portrait) {
+    padding: 30px 95px;
+  }
+  @media (max-width: 375px) and (orientation: portrait) {
+    padding: 30px 50px;
+  }
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: auto;
+    content: '';
+  }
+  &::before {
+    background-image: url('../img/temp-page-line.svg');
+    background-repeat: no-repeat;
+    background-position: 10% 50%;
+    background-size: cover;
+    @media (max-width: 1024px) and (orientation: landscape) {
+      background-image: url('../img/temp-page-line-1024.svg');
+      background-position: 0 0;
+      background-size: contain;
+    }
+    @media (max-width: 667px) and (orientation: landscape) {
+      background-image: url('../img/temp-page-line-667.svg');
+      background-position: 0 0;
+    }
+    @media (orientation: portrait) {
+      background-image: url('../img/temp-page-line-768.svg');
+      background-position: 0 0;
+    }
+    @media (max-width: 375px) and (orientation: portrait) {
+      background-image: url('../img/temp-page-line-375.svg');
+      background-position: 0 0;
+    }
+  }
+  &::after {
+    z-index: 1;
+    background-image: url('../img/bg-temp-build.png');
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-size: contain;
+
+    @media (max-width: 1024px) and (orientation: landscape) {
+      background-image: url('../img/bg-temp-build-1024.png');
+    }
+    @media (max-width: 667px) and (orientation: landscape) {
+      background-image: url('../img/bg-temp-build-667.png');
+      background-position: 100% 100%;
+      background-size: auto;
+    }
+    @media (orientation: portrait) {
+      background-image: url('../img/bg-temp-build-768.png');
+    }
+    @media (max-width: 375px) and (orientation: portrait) {
+      background-image: url('../img/bg-temp-build-375.png');
+      background-position: 100% 100%;
+      background-size: auto;
+    }
+  }
+}
+
+.temp-page__title {
+  font-size: 72px;
+  font-weight: bold;
+  font-style: normal;
+  line-height: 90px;
+  position: relative;
+  transform: translateY(25vh);
+  color: #005164;
+  @media (max-width: 1440px) and (orientation: landscape) {
+    transform: translateY(30vh);
+  }
+  @media (max-width: 1024px) and (orientation: landscape) {
+    font-size: 64px;
+    line-height: 80px;
+    max-width: 490px;
+    transform: translateY(15vh);
+  }
+  @media (max-width: 667px) and (orientation: landscape) {
+    font-size: 36px;
+    line-height: 50px;
+    max-width: 250px;
+    transform: translateY(0);
+  }
+  @media (orientation: portrait) {
+    font-size: 72px;
+    line-height: 90px;
+    transform: translateY(15vh);
+  }
+  @media (max-width: 480px) and (orientation: portrait) {
+    font-size: 36px;
+    line-height: 50px;
+    transform: translateY(15vh);
+  }
+}
