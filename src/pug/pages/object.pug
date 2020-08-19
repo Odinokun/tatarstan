@@ -10,29 +10,32 @@ block content
   .main-wrap
     //begin content
     main.main.object
-      include ../elements/close
       //begin object__left
       .object__left.object-left
         .object-left__inn
-          h2.object-left__title ул. Петербургская
+          h2.object-left__title улица Петербургская
           .object-left__video#object-left__video
             iframe(width="560" height="315" src="https://www.youtube.com/embed/A7U527zhAvY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
           .object-left__video-deskr
             .object-left__video-deskr-row
-              span Казань, ул. Петербургская, д 00
+              span Казань
+            .object-left__video-deskr-row
+              span ул. Петербургская, д 00
             .object-left__video-deskr-row
               span год основания:
               span 9999
-            .object-left__video-deskr-row
-              span параметр:
-              span значение
-
       //end object__left
 
       //begin object__right
       .object__right.object-right#object-right
+        .object-right__header
+          a(href="/").object-right__back
+            +svg('arr-back')
+          .object-right__lang
+            include ../elements/lang
+
         .object-right__inn
-          h2.object-right__title ул. Петербургская
+          h2.object-right__title улица<br>Петербургская
           p Если откуда-то и стоит начинать путешествие по «Историям Татарстана», то с «Первой горы». Именно так раньше называлась нынешняя улица Ульянова-Ленина. Первую локацию нашего маршрута мы начинаем вместе с lifestyle-блогером Алиной Гималтдиновой.
           p Сегодня здесь расположился музей семьи Ульяновых, а 133 года назад в этом доме жил молодой студент Владимир Ильич Ульянов, известный нам всем, как основатель Советского Союза.
           p Именно Владимир Ленин в мае 1920 года поставил свою подпись под декретом о создании Татарской Республики и, тем самым, навсегда вошел в историю татарского народа как один отцов-основателей современной татарской государственности.

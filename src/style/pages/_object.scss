@@ -15,7 +15,7 @@
   width: 50%;
 }
 
-//begin #LEFT
+////begin #LEFT
 .object-left {
   position: fixed;
   top: 0;
@@ -25,11 +25,11 @@
   flex-direction: column;
   justify-content: center;
   height: 100vh;
-  padding: 55px;
+  padding: 0 55px;
   background-image: url('../img/bg-object.svg');
   background-repeat: no-repeat;
-  background-position: 100% 50%;
-  background-size: cover;
+  background-position: 100% 0%;
+  //background-size: cover;
   @media (max-width: 1440px) and (orientation: landscape) {
     padding: 43px;
     background-image: url('../img/bg-object-1440.svg');
@@ -39,8 +39,8 @@
     width: 100%;
     height: auto;
     padding-top: 128px !important;
-    padding-right: 70px;
-    padding-left: 70px;
+    padding-right: 80px;
+    padding-left: 130px;
     background-color: #fff;
     background-image: none;
   }
@@ -54,20 +54,25 @@
     width: 100%;
     height: auto;
     padding-top: 153px !important;
-    padding-right: 70px;
-    padding-left: 70px;
+    padding-right: 63px;
+    padding-left: 102px;
     background-color: #fff;
     background-image: none;
   }
-  @media (max-width: 375px) and (orientation: portrait) {
+  @media (max-width: 480px) and (orientation: portrait) {
     padding-top: 94px !important;
-    padding-right: 25px;
-    padding-left: 25px;
+    padding-right: 15px;
+    padding-left: 15px;
   }
 }
 
 .object-left__inn {
   position: relative;
+  @media (max-width: 667px) and (orientation: landscape) {
+    max-width: 430px;
+    margin: 0 auto;
+    width: 100%;
+  }
 }
 
 .object-left__title {
@@ -89,7 +94,7 @@
   @media (orientation: portrait) {
     display: block;
   }
-  @media (max-width: 375px) and (orientation: portrait) {
+  @media (max-width: 480px) and (orientation: portrait) {
     font-size: 20px;
     margin-bottom: 13px;
   }
@@ -119,11 +124,17 @@
     position: relative;
     top: 0;
     margin-top: 35px;
+    margin-bottom: 55px;
   }
   @media (orientation: portrait) {
+    margin-bottom: 55px;
     position: relative;
     top: 0;
     margin-top: 35px;
+  }
+  @media (max-width: 480px) and (orientation: portrait) {
+    margin-top: 25px;
+    margin-bottom: 50px;
   }
 }
 
@@ -149,13 +160,16 @@
   background-color: #fff;
   box-shadow: -15px 0 30px rgba(0, 0, 0, .06);
   @media (max-width: 1440px) and (orientation: landscape) {
-    padding-left: 110px;
+  padding: 0 86px 70px 110px;
+//    padding-left: 110px;
   }
   @media (max-width: 1024px) and (orientation: landscape) {
     width: 100%;
     padding-top: 0 !important;
-    padding-left: 70px;
+//    padding-left: 70px;
     box-shadow: none;
+    padding-right: 80px;
+    padding-left: 130px;
   }
   @media (max-width: 667px) and (orientation: landscape) {
     padding-right: 25px;
@@ -164,37 +178,94 @@
   @media (orientation: portrait) {
     width: 100%;
     padding-top: 0 !important;
-    padding-left: 70px;
+//    padding-left: 70px;
+    padding-left: 102px;
+    padding-right: 63px;
     box-shadow: none;
   }
-  @media (max-width: 375px) and (orientation: portrait) {
-    padding-right: 25px;
-    padding-left: 25px;
+  @media (max-width: 480px) and (orientation: portrait) {
+    padding-right: 15px;
+    padding-left: 15px;
   }
-  &::before {
-    position: fixed;
-    z-index: 1;
-    right: 0;
-    bottom: 0;
-    width: 50%;
-    height: 158px;
-    content: '';
-    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 47.4%, #fff 100%);
-    @media (max-width: 1024px) and (orientation: landscape) {
-      display: none;
+//  &::before {
+//    position: fixed;
+//    z-index: 1;
+//    right: 0;
+//    bottom: 0;
+//    width: 50%;
+//    height: 158px;
+//    content: '';
+//    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 47.4%, #fff 100%);
+//    @media (max-width: 1024px) and (orientation: landscape) {
+//      display: none;
+//    }
+//    @media (orientation: portrait) {
+//      display: none;
+//    }
+//  }
+}
+
+.object-right__header {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  padding: 40px 83px 20px 83px;
+  background-color: #fff;
+  @media (max-width: 1440px) and (orientation: landscape) {
+    padding: 42px 72px 20px 42px;
+  }
+  @media (max-width: 1024px) and (orientation: landscape) {
+    width: 100%;
+    padding: 36px 43px 20px 62px;
+  }
+  @media (max-width: 667px) and (orientation: landscape) {
+    padding: 24px 24px 15px 24px;
+  }
+  @media (orientation: portrait) {
+    width: 100%;
+    padding: 35px 43px 15px 43px;
+  }
+  @media (max-width: 480px) and (orientation: portrait) {
+    padding: 15px 15px 10px 15px;
+
+  }
+}
+.object-right__back {
+  display: block;
+  cursor: pointer;
+  svg {
+    stroke: #005164;
+    width: 38px;
+    height: 47px;
+    @media (max-width: 667px) and (orientation: landscape) {
+      width: 20px;
+      height: 35px;
     }
-    @media (orientation: portrait) {
-      display: none;
-    }
+  @media (orientation: portrait) {
+    width: 20px;
+    height: 35px;
+  }
   }
 }
 
 .object-right__inn {
   max-width: 530px;
+  transform: translateY(-50px);
   @media (max-width: 1024px) and (orientation: landscape) {
     max-width: 100%;
   }
+  @media (max-width: 667px) and (orientation: landscape) {
+    max-width: 430px;
+    margin: 0 auto;
+    width: 100%;
+  }
   @media (orientation: portrait) {
+  transform: translateY(0px);
     max-width: 100%;
   }
   p {
@@ -203,10 +274,9 @@
     font-weight: 300;
     font-style: normal;
     line-height: 30px;
-    margin-bottom: 25px;
+    margin-bottom: 33px;
     color: #000;
     @media (max-width: 1440px) and (orientation: landscape) {
-      font-family: $font;
       font-size: 16px;
       line-height: 1.5;
       margin-bottom: 20px;
@@ -216,12 +286,15 @@
       margin-bottom: 15px;
     }
     @media (orientation: portrait) {
-      font-family: $font;
+      font-family: $font-thin;
       font-size: 16px;
+      font-weight: 300;
       line-height: 1.5;
       margin-bottom: 20px;
     }
-    @media (max-width: 375px) and (orientation: portrait) {
+    @media (max-width: 480px) and (orientation: portrait) {
+
+      //    @media (max-width: 375px) and (orientation: portrait) {
       font-size: 14px;
       margin-bottom: 15px;
     }
@@ -233,17 +306,16 @@
   font-size: 48px;
   font-weight: bold;
   font-style: normal;
-  margin-bottom: 80px;
+  line-height: 1.15;
+  margin-bottom: 50px;
   color: #000;
   @media (max-width: 1440px) and (orientation: landscape) {
     font-size: 42px;
   }
   @media (max-width: 1024px) and (orientation: landscape) {
-    font-size: 36px;
     display: none;
   }
   @media (orientation: portrait) {
-    font-size: 36px;
     display: none;
   }
 }
