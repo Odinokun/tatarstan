@@ -1,5 +1,48 @@
 .lang {
   display: flex;
+  @media (max-width: 1024px) and (orientation: landscape) {
+    position: relative;
+    flex-direction: column;
+    transform: translate(10px, 11px);
+    &::before {
+      position: absolute;
+      top: 4px;
+      right: -6px;
+      content: '';
+      border-top: 8px solid #005164;
+      border-right: 4px solid transparent;
+      border-left: 4px solid transparent;
+    }
+    &:hover {
+      .lang__item {
+        pointer-events: auto;
+        opacity: 1;
+      }
+    }
+  }
+  @media (orientation: portrait) {
+    position: relative;
+    flex-direction: column;
+    transform: translate(10px, 11px);
+    &::before {
+      position: absolute;
+      top: 4px;
+      right: -6px;
+      content: '';
+      border-top: 8px solid #005164;
+      border-right: 4px solid transparent;
+      border-left: 4px solid transparent;
+    }
+    &:hover {
+      .lang__item {
+        pointer-events: auto;
+        opacity: 1;
+      }
+    }
+  }
+  @media (max-width: 480px) and (orientation: portrait) {
+    transform: translate(-5px, 11px);
+  }
 }
 
 .lang__item {
@@ -10,8 +53,25 @@
   position: relative;
   display: block;
   padding: 0 0 0 22px;
+  transition: .5s;
   text-decoration: none;
   color: #005164;
+  @media (max-width: 1024px) and (orientation: landscape) {
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 7px;
+    padding-right: 10px;
+    pointer-events: none;
+    opacity: 0;
+  }
+  @media (orientation: portrait) {
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 7px;
+    padding-right: 10px;
+    pointer-events: none;
+    opacity: 0;
+  }
   &:hover {
     color: #005164;
   }
@@ -23,6 +83,12 @@
     margin: auto;
     content: '/';
     color: #005164;
+    @media (max-width: 1024px) and (orientation: landscape) {
+      display: none;
+    }
+    @media (orientation: portrait) {
+      display: none;
+    }
   }
   &:last-child {
     &::before {
@@ -31,5 +97,17 @@
   }
   &.active {
     text-decoration: underline;
+    @media (max-width: 1024px) and (orientation: landscape) {
+      order: -10;
+      text-decoration: none;
+      pointer-events: auto;
+      opacity: 1;
+    }
+    @media (orientation: portrait) {
+      order: -10;
+      text-decoration: none;
+      pointer-events: auto;
+      opacity: 1;
+    }
   }
 }

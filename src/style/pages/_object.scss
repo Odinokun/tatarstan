@@ -161,12 +161,10 @@
   box-shadow: -15px 0 30px rgba(0, 0, 0, .06);
   @media (max-width: 1440px) and (orientation: landscape) {
   padding: 0 86px 70px 110px;
-//    padding-left: 110px;
   }
   @media (max-width: 1024px) and (orientation: landscape) {
     width: 100%;
     padding-top: 0 !important;
-//    padding-left: 70px;
     box-shadow: none;
     padding-right: 80px;
     padding-left: 130px;
@@ -187,22 +185,6 @@
     padding-right: 15px;
     padding-left: 15px;
   }
-//  &::before {
-//    position: fixed;
-//    z-index: 1;
-//    right: 0;
-//    bottom: 0;
-//    width: 50%;
-//    height: 158px;
-//    content: '';
-//    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 47.4%, #fff 100%);
-//    @media (max-width: 1024px) and (orientation: landscape) {
-//      display: none;
-//    }
-//    @media (orientation: portrait) {
-//      display: none;
-//    }
-//  }
 }
 
 .object-right__header {
