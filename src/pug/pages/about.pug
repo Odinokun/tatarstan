@@ -9,12 +9,38 @@ block variables
 block content
   .main-wrap
     //begin content
-    main.main.error
-      .error__inn
-        .error__item
-          h2.error__title 404
-          span.error__text похоже,<br>Вы свернули не туда...
-          a(href="#").error__btn На главную
+    main.main.about
+      .about__header
+        a(href="/").about-header__back
+          +svg('arr-back')
+        .about-header__lang
+          include ../elements/lang
+
+      .about__body
+        .about__left
+          h2.about__title О проекте
+          p.about__top-text «Истории Татарстана» — это уникальный видеогид по республике, с рассказами сотни известных блогеров и известных жителей РТ о 100 самых ярких, важных и любимых ими местах в Татарстане. Вместе с героями видеороликов каждый сможет пройти по маршруту в разных городах и районах РТ, и узнать историю родных мест. Проект приурочен к важной дате, которую масштабно празднует Татарстан в 2020 году - 100-летию образования ТАССР.
+          .anim-wrap
+            #lottie
+          p Цель проекта — познакомить пользователей соцсетей, сотни тысяч татарстанцев с множеством уникальных мест нашей Республики, рассказать и напомнить важные факты из истории ТАССР, а также наглядно продемонстрировать, как развивается и меняется наша республика – что находилось в конкретных локациях в прежние времена, что находится сегодня — как исторические места вписываются в современное городское пространство.
+
+          ul.about__logo-list
+            li.about__logo-item
+              img(src="assets/img/logo.png" alt="picture")
+            li.about__logo-item
+              img(src="assets/img/logo.png" alt="picture")
+            li.about__logo-item
+              img(src="assets/img/logo.png" alt="picture")
+            li.about__logo-item
+              img(src="assets/img/logo.png" alt="picture")
+            li.about__logo-item
+              img(src="assets/img/logo.png" alt="picture")
+            li.about__logo-item
+              img(src="assets/img/logo.png" alt="picture")
+
     //end content
 
     include ../sections/scripts
+    script(src='assets/js/animation.js')
+    script(src='assets/js/temp-menu.js')
+

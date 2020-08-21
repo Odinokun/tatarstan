@@ -1,0 +1,40 @@
+extends ../_template
+
+mixin objects__item(pic, text)
+  li.objects__item
+    a(href="object.html").objects__link
+      .objects__img
+        img(src="assets/img/video-covers/video-" + pic + ".jpg" alt="picture")
+      span.objects__deskr #{text}
+
+block variables
+  - var title       = 'Истории Татарстана'
+  - var description = 'Истории Татарстана'
+  - var ogtitle     = 'Истории Татарстана'
+  - var ogimage     = 'assets/img/social.jpg'
+
+block content
+  .main-wrap
+    //begin content
+    main.main.objects
+      include ../elements/panel
+
+      .container
+        ul.objects__list
+          +objects__item('01', 'улица Ульянова-Ленина')
+          +objects__item('02', 'Катановский переулок')
+          +objects__item('03', 'улица Маяковского')
+          +objects__item('04', 'Сквер Вахитова')
+          +objects__item('05', 'улица Петербургская')
+          +objects__item('06', 'Сквер Тукая')
+          +objects__item('07', 'Булак')
+          +objects__item('08', 'Театр Камала')
+          +objects__item('09', 'Старо-Татарская слобода')
+        ul.objects__list
+          +objects__item('10', 'улица Ульянова-Ленина')
+          +objects__item('11', 'Катановский переулок')
+          +objects__item('12', 'улица Маяковского')
+    //end content
+
+    include ../sections/scripts
+    script(src='assets/js/temp-menu.js')

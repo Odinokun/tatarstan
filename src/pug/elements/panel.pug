@@ -1,0 +1,51 @@
+//begin panel
+.panel
+  //begin social
+  .panel__item.panel__item--social
+    .panel__socials
+      a(href="#" target='_blank').panel__socials-link.panel__socials-link--inst
+        img(src="assets/img/insta.svg" alt="picture")
+      a(href="#" target='_blank').panel__socials-link.panel__socials-link--youtube
+        img(src="assets/img/youtube-2.svg" alt="picture")
+    .panel__about
+      a(href="about.html").panel__about-link о проекте
+  //end social
+
+  //begin tools
+  .panel__item.panel__item--tools
+    .panel__3-dots
+      +svg('3dots')
+
+    //begin map-switcher
+    .map-switcher
+      .map-switcher__body
+        .map-switcher__switch.map-switcher__switch--map
+          input(type='radio' name='map-switcher' checked).map-switcher__switch-input
+          span.map-switcher__switch-btn
+            +svg('marker')
+        .map-switcher__switch.map-switcher__switch--grid
+          input(type='radio' name='map-switcher').map-switcher__switch-input
+          span.map-switcher__switch-btn
+            +svg('grid')
+    //end map-switcher
+
+    //begin marker-switcher
+    .marker-switcher
+      .marker-switcher__body
+        .marker-switcher__switch.marker-switcher__switch--left
+          input(type='radio' name='marker-switcher' ).marker-switcher__switch-input
+          span.marker-switcher__switch-btn
+        .marker-switcher__switch.marker-switcher__switch--middle
+          input(type='radio' name='marker-switcher' checked).marker-switcher__switch-input
+          span.marker-switcher__switch-btn
+        .marker-switcher__switch.marker-switcher__switch--right
+          input(type='radio' name='marker-switcher').marker-switcher__switch-input
+          span.marker-switcher__switch-btn
+    //end marker-switcher
+  //end tools
+
+  //begin language
+  .panel__item.panel__item--lang
+    include ../elements/lang
+  //end language
+//end panel

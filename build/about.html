@@ -13,7 +13,7 @@
     <meta property="og:image" content="assets/img/social.jpg">
     <!-- end social content&image-->
     <!-- begin favicon block start-->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon/favicon.jpg">
+    <link href="assets/img/favicon/favicon.ico">
     <!-- end favicon block end-->
     <link rel="stylesheet" href="assets/css/foundation.css">
     <link rel="stylesheet" href="assets/css/app.css">
@@ -25,16 +25,41 @@
   <body>
     <div class="main-wrap">
       <!--begin content-->
-      <main class="main error">
-        <div class="error__inn">
-          <div class="error__item">
-            <h2 class="error__title">404</h2><span class="error__text">похоже,<br>Вы свернули не туда...</span><a class="error__btn" href="#">На главную</a>
+      <main class="main about">
+        <div class="about__header"><a class="about-header__back" href="/">
+            <svg>
+              <use xlink:href="assets/img/sprite.svg#arr-back"></use>
+            </svg></a>
+          <div class="about-header__lang">
+            <!--begin lang-->
+            <div class="lang"><a class="lang__item active" href="#">рус</a><a class="lang__item" href="#">тат</a></div>
+            <!--end lang-->
+          </div>
+        </div>
+        <div class="about__body">
+          <div class="about__left">
+            <h2 class="about__title">О проекте</h2>
+            <p class="about__top-text">«Истории Татарстана» — это уникальный видеогид по республике, с рассказами сотни известных блогеров и известных жителей РТ о 100 самых ярких, важных и любимых ими местах в Татарстане. Вместе с героями видеороликов каждый сможет пройти по маршруту в разных городах и районах РТ, и узнать историю родных мест. Проект приурочен к важной дате, которую масштабно празднует Татарстан в 2020 году - 100-летию образования ТАССР.</p>
+            <div class="anim-wrap">
+              <div id="lottie"></div>
+            </div>
+            <p>Цель проекта — познакомить пользователей соцсетей, сотни тысяч татарстанцев с множеством уникальных мест нашей Республики, рассказать и напомнить важные факты из истории ТАССР, а также наглядно продемонстрировать, как развивается и меняется наша республика – что находилось в конкретных локациях в прежние времена, что находится сегодня — как исторические места вписываются в современное городское пространство.</p>
+            <ul class="about__logo-list">
+              <li class="about__logo-item"><img src="assets/img/logo.png" alt="picture"></li>
+              <li class="about__logo-item"><img src="assets/img/logo.png" alt="picture"></li>
+              <li class="about__logo-item"><img src="assets/img/logo.png" alt="picture"></li>
+              <li class="about__logo-item"><img src="assets/img/logo.png" alt="picture"></li>
+              <li class="about__logo-item"><img src="assets/img/logo.png" alt="picture"></li>
+              <li class="about__logo-item"><img src="assets/img/logo.png" alt="picture"></li>
+            </ul>
           </div>
         </div>
       </main>
       <!--end content-->
       <script src="assets/js/foundation.js"></script>
       <script src="assets/js/app.js"></script>
+      <script src="assets/js/animation.js"></script>
+      <script src="assets/js/temp-menu.js"></script>
     </div>
   </body>
 </html>

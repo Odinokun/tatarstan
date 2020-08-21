@@ -80,6 +80,13 @@
 ymaps.ready(init);
 
 function init () {
+  // координаты смещения иконки относительно её "ножки" (точки привязки).
+  let x1 = -34;
+  let y1 = -17;
+    // координаты смещения иконки относительно её "ножки" (точки привязки) - при наведении.
+  let x2 = -51;
+  let y2 = -34;
+
   let myMap = new ymaps.Map('map', {
       center: [55.76, 37.64],
       zoom: 13
@@ -100,7 +107,6 @@ function init () {
     });
 
 
-
   // Чтобы задать опции одиночным объектам и кластерам,
   // обратимся к дочерним коллекциям ObjectManager.
   objectManagerUser.objects.options.set({
@@ -108,7 +114,7 @@ function init () {
     iconLayout: 'default#image', // Необходимо указать данный тип макета.
     iconImageHref: 'assets/img/marker-user.png', // Своё изображение иконки метки.
     iconImageSize: [75, 75], // Размеры метки.
-    iconImageOffset: [0, 0], // Смещение иконки относительно её "ножки" (точки привязки).
+    iconImageOffset: [x1, y1], // Смещение иконки относительно её "ножки" (точки привязки).
     cursor: 'inherit' //Кастомный курсор при наведении
   });
 
@@ -121,7 +127,7 @@ function init () {
     iconLayout: 'default#image', // Необходимо указать данный тип макета.
     iconImageHref: 'assets/img/marker.png', // Своё изображение иконки метки.
     iconImageSize: [75, 75], // Размеры метки.
-    iconImageOffset: [0, 0], // Смещение иконки относительно её "ножки" (точки привязки).
+    iconImageOffset: [x1, y1], // Смещение иконки относительно её "ножки" (точки привязки).
     cursor: 'inherit' //Кастомный курсор при наведении
   });
 
@@ -142,7 +148,7 @@ function init () {
         iconLayout: 'default#image', // Необходимо указать данный тип макета.
         iconImageHref: 'assets/img/marker-hover.png', // Своё изображение иконки метки.
         iconImageSize: [110, 110], // Размеры метки.
-        iconImageOffset: [-17, -17], // Смещение иконки относительно её "ножки" (точки привязки).
+        iconImageOffset: [x2, y2], // Смещение иконки относительно её "ножки" (точки привязки).
         cursor: 'inherit' //Кастомный курсор при наведении
       });
     } else {
@@ -150,7 +156,7 @@ function init () {
         iconLayout: 'default#image', // Необходимо указать данный тип макета.
         iconImageHref: 'assets/img/marker.png', // Своё изображение иконки метки.
         iconImageSize: [75, 75], // Размеры метки.
-        iconImageOffset: [0, 0], // Смещение иконки относительно её "ножки" (точки привязки).
+        iconImageOffset: [x1, y1], // Смещение иконки относительно её "ножки" (точки привязки).
         cursor: 'inherit' //Кастомный курсор при наведении
       });
     }
@@ -169,7 +175,7 @@ function init () {
         iconLayout: 'default#image', // Необходимо указать данный тип макета.
         iconImageHref: 'assets/img/marker-hover.png', // Своё изображение иконки метки.
         iconImageSize: [110, 110], // Размеры метки.
-        iconImageOffset: [-17, -17], // Смещение иконки относительно её "ножки" (точки привязки).
+        iconImageOffset: [x2, y2], // Смещение иконки относительно её "ножки" (точки привязки).
         cursor: 'inherit' //Кастомный курсор при наведении
       });
     } else {
@@ -177,7 +183,7 @@ function init () {
         iconLayout: 'default#image', // Необходимо указать данный тип макета.
         iconImageHref: 'assets/img/marker-user.png', // Своё изображение иконки метки.
         iconImageSize: [75, 75], // Размеры метки.
-        iconImageOffset: [0, 0], // Смещение иконки относительно её "ножки" (точки привязки).
+        iconImageOffset: [x1, y1], // Смещение иконки относительно её "ножки" (точки привязки).
         cursor: 'inherit' //Кастомный курсор при наведении
       });
     }
@@ -211,11 +217,3 @@ function init () {
 }
 
 
-
-
-
-
-$('.aside-bottom__btn').on('click', function (e) {
-  e.preventDefault();
-  $('.aside-bottom__btn').toggleClass('active');
-});

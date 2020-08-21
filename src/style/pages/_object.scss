@@ -28,7 +28,7 @@
   padding: 0 55px;
   background-image: url('../img/bg-object.svg');
   background-repeat: no-repeat;
-  background-position: 100% 0%;
+  background-position: 100% 0;
   //background-size: cover;
   @media (max-width: 1440px) and (orientation: landscape) {
     padding: 43px;
@@ -69,9 +69,9 @@
 .object-left__inn {
   position: relative;
   @media (max-width: 667px) and (orientation: landscape) {
+    width: 100%;
     max-width: 430px;
     margin: 0 auto;
-    width: 100%;
   }
 }
 
@@ -127,10 +127,10 @@
     margin-bottom: 55px;
   }
   @media (orientation: portrait) {
-    margin-bottom: 55px;
     position: relative;
     top: 0;
     margin-top: 35px;
+    margin-bottom: 55px;
   }
   @media (max-width: 480px) and (orientation: portrait) {
     margin-top: 25px;
@@ -160,14 +160,14 @@
   background-color: #fff;
   box-shadow: -15px 0 30px rgba(0, 0, 0, .06);
   @media (max-width: 1440px) and (orientation: landscape) {
-  padding: 0 86px 70px 110px;
+    padding: 0 86px 70px 110px;
   }
   @media (max-width: 1024px) and (orientation: landscape) {
     width: 100%;
     padding-top: 0 !important;
-    box-shadow: none;
     padding-right: 80px;
     padding-left: 130px;
+    box-shadow: none;
   }
   @media (max-width: 667px) and (orientation: landscape) {
     padding-right: 25px;
@@ -176,9 +176,9 @@
   @media (orientation: portrait) {
     width: 100%;
     padding-top: 0 !important;
-//    padding-left: 70px;
-    padding-left: 102px;
     padding-right: 63px;
+    //    padding-left: 70px;
+    padding-left: 102px;
     box-shadow: none;
   }
   @media (max-width: 480px) and (orientation: portrait) {
@@ -214,7 +214,6 @@
   }
   @media (max-width: 480px) and (orientation: portrait) {
     padding: 15px 15px 10px 15px;
-
   }
 }
 .object-right__back {
@@ -228,10 +227,10 @@
       width: 20px;
       height: 35px;
     }
-  @media (orientation: portrait) {
-    width: 20px;
-    height: 35px;
-  }
+    @media (orientation: portrait) {
+      width: 20px;
+      height: 35px;
+    }
   }
 }
 
@@ -242,13 +241,13 @@
     max-width: 100%;
   }
   @media (max-width: 667px) and (orientation: landscape) {
+    width: 100%;
     max-width: 430px;
     margin: 0 auto;
-    width: 100%;
   }
   @media (orientation: portrait) {
-  transform: translateY(0px);
     max-width: 100%;
+    transform: translateY(0px);
   }
   p {
     font-family: $font-thin;
@@ -275,7 +274,6 @@
       margin-bottom: 20px;
     }
     @media (max-width: 480px) and (orientation: portrait) {
-
       //    @media (max-width: 375px) and (orientation: portrait) {
       font-size: 14px;
       margin-bottom: 15px;

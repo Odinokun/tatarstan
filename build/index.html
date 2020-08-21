@@ -13,7 +13,7 @@
     <meta property="og:image" content="assets/img/social.jpg">
     <!-- end social content&image-->
     <!-- begin favicon block start-->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon/favicon.jpg">
+    <link href="assets/img/favicon/favicon.ico">
     <!-- end favicon block end-->
     <link rel="stylesheet" href="assets/css/foundation.css">
     <link rel="stylesheet" href="assets/css/app.css">
@@ -25,20 +25,66 @@
   <body>
     <div class="main-wrap">
       <!--begin content-->
-      <main class="main">
-        <!--begin aside-->
-        <div class="aside">
-          <!--begin aside__top-->
-          <div class="aside__top aside-top"><a class="aside-top__logo" href="#"><img src="assets/img/logo.svg" alt="logo"></a></div>
-          <!--end aside__top-->
-          <!--begin aside__bottom-->
-          <div class="aside__bottom aside-bottom">
-            <button class="aside-bottom__btn active">Карта</button>
-            <button class="aside-bottom__btn">Список</button>
+      <main class="main index">
+        <!--begin panel-->
+        <div class="panel">
+          <!--begin social-->
+          <div class="panel__item panel__item--social">
+            <div class="panel__socials"><a class="panel__socials-link panel__socials-link--inst" href="#" target="_blank"><img src="assets/img/insta.svg" alt="picture"></a><a class="panel__socials-link panel__socials-link--youtube" href="#" target="_blank"><img src="assets/img/youtube-2.svg" alt="picture"></a></div>
+            <div class="panel__about"><a class="panel__about-link" href="about.html">о проекте</a></div>
           </div>
-          <!--end aside__bottom-->
+          <!--end social-->
+          <!--begin tools-->
+          <div class="panel__item panel__item--tools">
+            <div class="panel__3-dots">
+              <svg>
+                <use xlink:href="assets/img/sprite.svg#3dots"></use>
+              </svg>
+            </div>
+            <!--begin map-switcher-->
+            <div class="map-switcher">
+              <div class="map-switcher__body">
+                <div class="map-switcher__switch map-switcher__switch--map">
+                  <input class="map-switcher__switch-input" type="radio" name="map-switcher" checked><span class="map-switcher__switch-btn">
+                    <svg>
+                      <use xlink:href="assets/img/sprite.svg#marker"></use>
+                    </svg></span>
+                </div>
+                <div class="map-switcher__switch map-switcher__switch--grid">
+                  <input class="map-switcher__switch-input" type="radio" name="map-switcher"><span class="map-switcher__switch-btn">
+                    <svg>
+                      <use xlink:href="assets/img/sprite.svg#grid"></use>
+                    </svg></span>
+                </div>
+              </div>
+            </div>
+            <!--end map-switcher-->
+            <!--begin marker-switcher-->
+            <div class="marker-switcher">
+              <div class="marker-switcher__body">
+                <div class="marker-switcher__switch marker-switcher__switch--left">
+                  <input class="marker-switcher__switch-input" type="radio" name="marker-switcher"><span class="marker-switcher__switch-btn"></span>
+                </div>
+                <div class="marker-switcher__switch marker-switcher__switch--middle">
+                  <input class="marker-switcher__switch-input" type="radio" name="marker-switcher" checked><span class="marker-switcher__switch-btn"></span>
+                </div>
+                <div class="marker-switcher__switch marker-switcher__switch--right">
+                  <input class="marker-switcher__switch-input" type="radio" name="marker-switcher"><span class="marker-switcher__switch-btn"></span>
+                </div>
+              </div>
+            </div>
+            <!--end marker-switcher-->
+          </div>
+          <!--end tools-->
+          <!--begin language-->
+          <div class="panel__item panel__item--lang">
+            <!--begin lang-->
+            <div class="lang"><a class="lang__item active" href="#">рус</a><a class="lang__item" href="#">тат</a></div>
+            <!--end lang-->
+          </div>
+          <!--end language-->
         </div>
-        <!--end aside-->
+        <!--end panel-->
         <div id="map"></div>
       </main>
       <!--end content-->
@@ -46,6 +92,7 @@
       <script src="assets/js/app.js"></script>
       <script src="https://api-maps.yandex.ru/2.1/?apikey=d9063b73-cd43-48f8-b594-e35195e20ef2&amp;lang=ru_RU"></script>
       <script src="assets/js/uncompressed.js"></script>
+      <script src="assets/js/temp-menu.js"></script>
     </div>
   </body>
 </html>

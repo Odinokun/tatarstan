@@ -48,12 +48,12 @@
 .lang__item {
   font-family: $font;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1;
   position: relative;
   display: block;
   padding: 0 0 0 22px;
-  transition: .5s;
+  transition: opacity .5s;
   text-decoration: none;
   color: #005164;
   @media (max-width: 1024px) and (orientation: landscape) {

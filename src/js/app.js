@@ -9,6 +9,9 @@ $(function() {
   // begin language switcher
   require('./modules/lang')();
 
+  // begin menu
+  require('./modules/3dots-menu')();
+
   // begin Popup
   // require('./modules/popup')();
 
