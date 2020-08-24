@@ -39,6 +39,7 @@
 }
 
 .ymaps-2-1-77-balloon {
+  pointer-events: none;
   box-shadow: none !important;
 }
 
@@ -72,6 +73,42 @@
   }
 }
 
+.ymaps-2-1-77-b-cluster-tabs__menu {
+  background: #fff;
+  pointer-events: auto;
+}
+.ymaps-2-1-77-b-cluster-tabs__menu-item,
+.ymaps-2-1-77-b-cluster-tabs__menu-item_current_yes{
+  padding: 7px 0 7px 10px !important;
+}
+.ymaps-2-1-77-b-cluster-tabs__content-item {
+  background-color: #fff;
+  .ymaps-2-1-77-b-cluster-content__footer{
+    .balloon-footer{
+
+   box-shadow: none;
+    }
+  }
+}
+.ymaps-2-1-77-b-cluster-content__header{
+  transform: translate(15px, 10px);
+}
+.ymaps-2-1-77-b-cluster-tabs__content-item{
+  position: relative;
+  &::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    width: 10px;
+    height: 100%;
+    content: '';
+    z-index: 1;
+    background: #fff;
+  }
+
+}
+
 //end # убираем дефолтные приколы
 
 .balloon-top {
@@ -82,6 +119,7 @@
   width: 283px;
   height: 250px;
   padding: 0;
+  pointer-events: none;
   img {
     position: relative;
     z-index: 10;
@@ -117,6 +155,7 @@
   z-index: 1;
   width: 283px;
   padding: 20px 0 0 18px;
+  pointer-events: auto;
   background-color: #fff;
 }
 
@@ -141,6 +180,7 @@
   justify-content: center;
   width: 283px;
   padding: 15px 0 19px 18px;
+  pointer-events: auto;
   background-color: #fff;
   box-shadow: 14px 4px 30px rgba(0, 0, 0, .2);
 

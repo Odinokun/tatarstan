@@ -13,7 +13,9 @@
       border-right: 4px solid transparent;
       border-left: 4px solid transparent;
     }
-    &:hover {
+    &.active{
+      pointer-events: none !important;
+    //&:hover {
       .lang__item {
         pointer-events: auto;
         opacity: 1;
@@ -33,7 +35,8 @@
       border-right: 4px solid transparent;
       border-left: 4px solid transparent;
     }
-    &:hover {
+    &.active{
+    //&:hover {
       .lang__item {
         pointer-events: auto;
         opacity: 1;

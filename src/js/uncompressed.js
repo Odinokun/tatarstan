@@ -10,19 +10,20 @@ function init() {
 
   let myMap = new ymaps.Map('map', {
       center: [55.795691, 49.124787],
-      zoom: 13
+      // zoom: 13
+      zoom: 6
     }, {
       searchControlProvider: 'yandex#search'
     }),
     objectManager = new ymaps.ObjectManager({
       // Чтобы метки начали кластеризоваться, выставляем опцию.
-      clusterize: false,
+      clusterize: true,
       // ObjectManager принимает те же опции, что и кластеризатор.
       gridSize: 32,
       clusterDisableClickZoom: true
     }),
     objectManagerUser = new ymaps.ObjectManager({
-      clusterize: false,
+      clusterize: true,
       gridSize: 32,
       clusterDisableClickZoom: true
     });
@@ -38,9 +39,10 @@ function init() {
       iconImageOffset: [x1, y1], // Смещение иконки относительно её "ножки" (точки привязки).
       cursor: 'inherit' //Кастомный курсор при наведении
     });
-    objectManager.clusters.options.set('preset', 'islands#invertedVioletClusterIcons');
+    objectManager.clusters.options.set('preset', 'islands#nightClusterIcons');
     myMap.geoObjects.add(objectManager);
   }
+
   addDefaultPoints();
 
   function addUserPoints() {
@@ -55,7 +57,7 @@ function init() {
       cursor: 'inherit' //Кастомный курсор при наведении
     });
 
-    objectManagerUser.clusters.options.set('preset', 'islands#invertedVioletClusterIcons');
+    objectManagerUser.clusters.options.set('preset', 'islands#nightClusterIcons');
     myMap.geoObjects.add(objectManagerUser);
   }
 
@@ -129,12 +131,12 @@ function init() {
 
   $.ajax({
     url: "assets/js/data.json"
-  }).done(function(data) {
+  }).done(function (data) {
     objectManager.add(data);
   });
   $.ajax({
     url: "assets/js/data-user.json"
-  }).done(function(data) {
+  }).done(function (data) {
     objectManagerUser.add(data);
   });
 
@@ -196,12 +198,12 @@ function init() {
 }
 
 
-
 function popupVideo() {
-    let dataYoutube = $('#video-popup__iframe').attr('data-youtube');
+  let dataYoutube = $('#video-popup__iframe').attr('data-youtube');
 
-    $('#video-popup__iframe').html('<iframe src="https://www.youtube.com/embed/' + dataYoutube + '?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
-    $('.popup').fadeIn();
+
+  $('#video-popup__iframe').html('<iframe src="https://www.youtube.com/embed/' + dataYoutube + '?controls=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+  $('.popup').fadeIn();
 
 
   $('.popup__close').on('click', function (e) {
@@ -211,5 +213,6 @@ function popupVideo() {
     $('#video-popup__iframe iframe').remove();
   });
 }
+
 popupVideo();
 

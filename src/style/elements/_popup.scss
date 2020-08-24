@@ -7,6 +7,19 @@
   left: 0;
   margin: auto;
   background-color: #000;
+  &::before {
+    content: '';
+    width: 100%;
+    position: fixed;
+    height: 100px;
+    left: 0;
+    top: 0;
+    background-color: transparent;
+    z-index: 1000;
+    @include max(1024) {
+      display: none;
+    }
+  }
 }
 
 .popup__video {
