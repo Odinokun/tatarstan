@@ -1,137 +1,329 @@
-.objects {
-  padding-top: 314px;
-  background-image: url('../img/bg-objects.png'), linear-gradient(180deg, rgba(131, 177, 168, .15) .27%, rgba(203, 205, 174, .15) 100%);
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: cover;
-  @media (max-width: 1440px) and (orientation: landscape) {
-    padding-top: 260px;
-  }
-  @media (max-width: 1024px) and (orientation: landscape) {
-    padding-top: 190px;
-  }
-  @media (max-width: 667px) and (orientation: landscape) {
-    padding-top: 83px;
-  }
-  @media (orientation: portrait) {
-    padding-top: 190px;
-  }
-  @media (max-width: 375px) and (orientation: portrait) {
-    padding-top: 83px;
-  }
-
-  .container {
-    max-width: 1920px;
-    margin: 0 auto;
-    padding: 0 120px 0 325px;
-    @media (max-width: 1440px) and (orientation: landscape) {
-      padding: 0 60px 0 120px;
-    }
-    @media (max-width: 1024px) and (orientation: landscape) {
-      padding: 0 25px;
-    }
-    @media (max-width: 667px) and (orientation: landscape) {
-      padding: 0 15px;
-    }
-    @media (orientation: portrait) {
-      padding: 0 25px;
-    }
-    @media (max-width: 375px) and (orientation: portrait) {
-      padding: 0 15px;
-    }
-  }
-}
-
-.objects__list {
+.object {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 0 0 65px 0;
-  padding: 0 0 120px 0;
-  border-bottom: 1px solid rgba(0, 81, 100, .5);
-  &:last-child {
-    border: none;
+  background-color: #ebf0ef;
+  @media (max-width: 1024px) and (orientation: landscape) {
+    flex-direction: column;
+  }
+
+  @media (orientation: portrait) {
+    flex-direction: column;
   }
 }
 
-.objects__item {
-  width: calc(25% - 15px);
-  list-style: none;
+.object-left,
+.object-right {
+  width: 50%;
+}
 
+////begin #LEFT
+.object-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  overflow: auto;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 55px;
+  background-image: url('../img/bg-object.svg');
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  background-size: contain;
   @media (max-width: 1440px) and (orientation: landscape) {
-    width: calc(33.33% - 19px);
+    padding: 43px;
+    background-image: url('../img/bg-object-1440.svg');
   }
   @media (max-width: 1024px) and (orientation: landscape) {
-    width: calc(33.33% - 10px);
+    position: relative;
+    display: block;
+    flex: none;
+    width: 100%;
+    height: inherit;
+    padding-top: 128px !important;
+    padding-right: 80px;
+    padding-left: 130px;
+    background-color: #fff;
+    background-image: none;
   }
   @media (max-width: 667px) and (orientation: landscape) {
-    width: calc(50% - 10px);
-  }
-  @media (max-width: 375px) and (orientation: landscape) {
-    width: 100%;
+    padding-top: 89px !important;
+    padding-right: 25px;
+    padding-left: 25px;
   }
   @media (orientation: portrait) {
-    width: calc(33.33% - 10px);
-  }
-  @media (max-width: 667px) and (orientation: portrait) {
-    width: calc(50% - 10px);
-  }
-  @media (max-width: 375px) and (orientation: portrait) {
+    position: relative;
+    display: block;
+    flex: none;
     width: 100%;
+    height: inherit;
+    padding-top: 153px !important;
+    padding-right: 63px;
+    padding-left: 102px;
+    background-color: #fff;
+    background-image: none;
+  }
+  @media (max-width: 480px) and (orientation: portrait) {
+    padding-top: 94px !important;
+    padding-right: 15px;
+    padding-left: 15px;
   }
 }
 
-.objects__link {
-  display: block;
-}
-
-.objects__img {
+.object-left__inn {
   position: relative;
-  width: 100%;
-  height: 197px;
-  box-shadow: 5px 5px 20px rgba(0, 79, 110, .25);
-  @media (max-width: 1440px) and (orientation: landscape) {
-    height: 185px;
+  @media (max-width: 667px) and (orientation: landscape) {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
   }
-  &::before {
+}
+
+.object-left__title {
+  font-family: $font;
+  font-size: 36px;
+  font-weight: bold;
+  font-style: normal;
+  display: none;
+  margin-bottom: 48px;
+  color: #000;
+
+  @media (max-width: 1024px) and (orientation: landscape) {
+    display: block;
+  }
+  @media (max-width: 667px) and (orientation: landscape) {
+    font-size: 20px;
+    margin-bottom: 13px;
+  }
+  @media (orientation: portrait) {
+    display: block;
+  }
+  @media (max-width: 480px) and (orientation: portrait) {
+    font-size: 20px;
+    margin-bottom: 13px;
+  }
+}
+
+.object-left__video {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 56.25%;
+  box-shadow: 5px 5px 25px rgba(0, 79, 110, .3);
+  iframe {
     position: absolute;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
-    width: 45px;
-    height: 32px;
-    margin: auto;
-    content: '';
-    background-image: url('../img/youtube.svg');
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: contain;
-  }
-  img {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
   }
 }
 
-.objects__deskr {
-  font-size: 20px;
-  font-weight: normal;
-  line-height: 1.4;
-  display: block;
-  margin-bottom: 42px;
-  padding-top: 5px;
-  color: #000;
+.object-left__video-deskr {
+  position: absolute;
+  top: calc(100% + 45px);
+  left: 0;
   @media (max-width: 1024px) and (orientation: landscape) {
-    font-size: 20px;
-  }
-  @media (max-width: 667px) and (orientation: landscape) {
-    font-size: 18px;
+    position: relative;
+    top: 0;
+    margin-top: 35px;
+    margin-bottom: 55px;
   }
   @media (orientation: portrait) {
-    font-size: 18px;
+    position: relative;
+    top: 0;
+    margin-top: 35px;
+    margin-bottom: 55px;
+  }
+  @media (max-width: 480px) and (orientation: portrait) {
+    margin-top: 25px;
+    margin-bottom: 50px;
   }
 }
+
+.object-left__video-deskr-row {
+  display: flex;
+  span {
+    font-family: $font-thin;
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 25px;
+    padding-right: 4px;
+    color: #000;
+  }
+}
+
+//end #LEFT
+
+//begin #RIGHT
+.object-right {
+  position: relative;
+  margin-left: auto;
+  padding: 0 70px 70px 172px;
+  background-color: #fff;
+  box-shadow: -15px 0 30px rgba(0, 0, 0, .06);
+  &::before {
+    position: fixed;
+    z-index: 100;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    height: 180px;
+    content: '';
+    pointer-events: none;
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 47.4%, #fff 100%);
+    @media (max-width: 1440px) and (orientation: landscape) {
+      height: 150px;
+    }
+    @media (max-width: 1024px) and (orientation: landscape) {
+      display: none;
+    }
+    @media (orientation: portrait) {
+      width: 100%;
+      height: 150px;
+    }
+  }
+  @media (max-width: 1440px) and (orientation: landscape) {
+    padding: 0 86px 70px 110px;
+  }
+  @media (max-width: 1024px) and (orientation: landscape) {
+    width: 100%;
+    padding-top: 0 !important;
+    padding-right: 80px;
+    padding-left: 130px;
+    box-shadow: none;
+  }
+  @media (max-width: 667px) and (orientation: landscape) {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+  @media (orientation: portrait) {
+    width: 100%;
+    padding-top: 0 !important;
+    padding-right: 63px;
+    //    padding-left: 70px;
+    padding-left: 102px;
+    box-shadow: none;
+  }
+  @media (max-width: 480px) and (orientation: portrait) {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+.object-right__header {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  padding: 30px 83px 15px 83px;
+  background-color: #fff;
+  @media (max-width: 1440px) and (orientation: landscape) {
+    padding: 30px 72px 15px 42px;
+  }
+  @media (max-width: 1024px) and (orientation: landscape) {
+    width: 100%;
+    padding: 30px 43px 15px 62px;
+  }
+  @media (max-width: 667px) and (orientation: landscape) {
+    padding: 20px 24px 15px 24px;
+  }
+  @media (orientation: portrait) {
+    width: 100%;
+    padding: 30px 43px 15px 43px;
+  }
+  @media (max-width: 480px) and (orientation: portrait) {
+    padding: 15px 15px 10px 15px;
+  }
+}
+
+.object-right__back {
+  display: block;
+  cursor: pointer;
+  svg {
+    stroke: #005164;
+    width: 40px;
+    height: 47px;
+    @media (max-width: 667px) and (orientation: landscape) {
+      width: 20px;
+      height: 35px;
+    }
+    @media (orientation: portrait) {
+      width: 20px;
+      height: 35px;
+    }
+  }
+}
+
+.object-right__inn {
+  max-width: 530px;
+  transform: translateY(-15px);
+  @media (max-width: 1024px) and (orientation: landscape) {
+    max-width: 100%;
+  }
+  @media (max-width: 667px) and (orientation: landscape) {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+  }
+  @media (orientation: portrait) {
+    max-width: 100%;
+    transform: translateY(0px);
+  }
+  p {
+    font-family: $font-thin;
+    font-size: 18px;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 30px;
+    margin-bottom: 33px;
+    color: #000;
+    @media (max-width: 1440px) and (orientation: landscape) {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 667px) and (orientation: landscape) {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+    @media (orientation: portrait) {
+      font-family: $font-thin;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 480px) and (orientation: portrait) {
+      //    @media (max-width: 375px) and (orientation: portrait) {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.object-right__title {
+  font-family: $font;
+  font-size: 48px;
+  font-weight: bold;
+  font-style: normal;
+  line-height: 1.15;
+  margin-bottom: 50px;
+  color: #000;
+  @media (max-width: 1440px) and (orientation: landscape) {
+    font-size: 42px;
+  }
+  @media (max-width: 1024px) and (orientation: landscape) {
+    display: none;
+  }
+  @media (orientation: portrait) {
+    display: none;
+  }
+}
+
+//end #RIGHT

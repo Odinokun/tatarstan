@@ -4,6 +4,7 @@
 $(document).ready(function ($) {
   pageWidget([
     'index',
+    'index-popup',
     '404',
     'about',
     'object',

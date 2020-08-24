@@ -13,6 +13,6 @@ $(function() {
   require('./modules/3dots-menu')();
 
   // begin Popup
-  // require('./modules/popup')();
+  require('./modules/popup')();
 
 });

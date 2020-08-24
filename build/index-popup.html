@@ -24,7 +24,7 @@
   <body>
     <div class="main-wrap">
       <!--begin content-->
-      <main class="main objects">
+      <main class="main index">
         <!--begin panel-->
         <div class="panel">
           <!--begin social-->
@@ -84,52 +84,18 @@
           <!--end language-->
         </div>
         <!--end panel-->
-        <div class="container">
-          <ul class="objects__list">
-            <li class="objects__item"><a class="objects__link" href="object.html">
-                <div class="objects__img"><img src="assets/img/video-covers/video-01.jpg" alt="picture" /></div><span class="objects__deskr">улица Ульянова-Ленина</span>
-              </a></li>
-            <li class="objects__item"><a class="objects__link" href="object.html">
-                <div class="objects__img"><img src="assets/img/video-covers/video-02.jpg" alt="picture" /></div><span class="objects__deskr">Катановский переулок</span>
-              </a></li>
-            <li class="objects__item"><a class="objects__link" href="object.html">
-                <div class="objects__img"><img src="assets/img/video-covers/video-03.jpg" alt="picture" /></div><span class="objects__deskr">улица Маяковского</span>
-              </a></li>
-            <li class="objects__item"><a class="objects__link" href="object.html">
-                <div class="objects__img"><img src="assets/img/video-covers/video-04.jpg" alt="picture" /></div><span class="objects__deskr">Сквер Вахитова</span>
-              </a></li>
-            <li class="objects__item"><a class="objects__link" href="object.html">
-                <div class="objects__img"><img src="assets/img/video-covers/video-05.jpg" alt="picture" /></div><span class="objects__deskr">улица Петербургская или другое название в две строки</span>
-              </a></li>
-            <li class="objects__item"><a class="objects__link" href="object.html">
-                <div class="objects__img"><img src="assets/img/video-covers/video-06.jpg" alt="picture" /></div><span class="objects__deskr">Сквер Тукая</span>
-              </a></li>
-            <li class="objects__item"><a class="objects__link" href="object.html">
-                <div class="objects__img"><img src="assets/img/video-covers/video-07.jpg" alt="picture" /></div><span class="objects__deskr">Булак</span>
-              </a></li>
-            <li class="objects__item"><a class="objects__link" href="object.html">
-                <div class="objects__img"><img src="assets/img/video-covers/video-08.jpg" alt="picture" /></div><span class="objects__deskr">Театр Камала</span>
-              </a></li>
-            <li class="objects__item"><a class="objects__link" href="object.html">
-                <div class="objects__img"><img src="assets/img/video-covers/video-09.jpg" alt="picture" /></div><span class="objects__deskr">Старо-Татарская слобода</span>
-              </a></li>
-          </ul>
-          <ul class="objects__list">
-            <li class="objects__item"><a class="objects__link" href="object.html">
-                <div class="objects__img"><img src="assets/img/video-covers/video-10.jpg" alt="picture" /></div><span class="objects__deskr">улица Ульянова-Ленина</span>
-              </a></li>
-            <li class="objects__item"><a class="objects__link" href="object.html">
-                <div class="objects__img"><img src="assets/img/video-covers/video-11.jpg" alt="picture" /></div><span class="objects__deskr">Катановский переулок</span>
-              </a></li>
-            <li class="objects__item"><a class="objects__link" href="object.html">
-                <div class="objects__img"><img src="assets/img/video-covers/video-12.jpg" alt="picture" /></div><span class="objects__deskr">улица Маяковского</span>
-              </a></li>
-          </ul>
-        </div>
+        <div id="map"></div>
       </main>
       <!--end content-->
+      <!--begin popup-->
+      <div class="popup">
+        <div class="popup__video" id="video-popup__iframe" data-youtube="A7U527zhAvY"></div><a class="popup__close" href="#">поехали!</a>
+      </div>
+      <!--end popup-->
       <script src="assets/js/foundation.js"></script>
       <script src="assets/js/app.js"></script>
+      <script src="https://api-maps.yandex.ru/2.1/?apikey=d9063b73-cd43-48f8-b594-e35195e20ef2&amp;lang=ru_RU"></script>
+      <script src="assets/js/uncompressed.js"></script>
       <script src="assets/js/temp-menu.js"></script>
     </div>
   </body>

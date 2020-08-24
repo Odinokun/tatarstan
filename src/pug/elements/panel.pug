@@ -33,14 +33,17 @@
     .marker-switcher
       .marker-switcher__body
         .marker-switcher__switch.marker-switcher__switch--left
-          input(type='radio' name='marker-switcher' ).marker-switcher__switch-input
+          input(type='radio' name='marker-switcher' value='default').marker-switcher__switch-input
           span.marker-switcher__switch-btn
+          span.marker-switcher__switch-tooltip истории поумолчанию
         .marker-switcher__switch.marker-switcher__switch--middle
-          input(type='radio' name='marker-switcher' checked).marker-switcher__switch-input
+          input(type='radio' name='marker-switcher' value='all' checked).marker-switcher__switch-input
           span.marker-switcher__switch-btn
+          span.marker-switcher__switch-tooltip все истории
         .marker-switcher__switch.marker-switcher__switch--right
-          input(type='radio' name='marker-switcher').marker-switcher__switch-input
+          input(type='radio' name='marker-switcher' value='user').marker-switcher__switch-input
           span.marker-switcher__switch-btn
+          span.marker-switcher__switch-tooltip истории пользователей
     //end marker-switcher
   //end tools
 

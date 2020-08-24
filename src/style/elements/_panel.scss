@@ -7,6 +7,7 @@
   align-items: center;
   width: 100%;
   padding: 30px 45px;
+  pointer-events: none;
   @media (max-width: 1024px) and (orientation: landscape) {
     padding: 25px;
   }
@@ -21,6 +22,7 @@
 .panel__item {
   flex: none;
   height: 60px;
+  pointer-events: auto;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 79, 110, .3);
   @media (max-width: 1440px) and (orientation: landscape) {
@@ -196,6 +198,9 @@
   @media (max-width: 767px) {
     display: flex;
   }
+  @media (max-width: 375px) {
+    padding: 0 5px;
+  }
   svg {
     fill: #005164;
     width: 3px;
@@ -209,6 +214,9 @@
   padding: 0 25px;
   @media (orientation: portrait) {
     padding: 0 15px;
+  }
+  @media (max-width: 375px) {
+    padding: 0 10px 0 5px;
   }
   &::before {
     position: absolute;
@@ -332,12 +340,15 @@
   @media (orientation: portrait) {
     padding: 0 15px;
   }
+  @media (max-width: 375px) {
+    padding: 0 5px 0 10px;
+  }
 }
 
 .marker-switcher__body {
   position: relative;
   display: flex;
-  overflow: hidden;
+  //overflow: hidden;
   justify-content: space-between;
   align-items: center;
   width: 180px;
@@ -354,6 +365,11 @@
 .marker-switcher__switch {
   position: relative;
   height: 34px;
+  &:hover {
+    .marker-switcher__switch-tooltip{
+      opacity: 1;
+    }
+  }
   @media (max-width: 767px) {
     height: 22px;
   }
@@ -431,6 +447,37 @@
   }
 }
 
+.marker-switcher__switch-tooltip {
+  font-family: $font-thin;
+  font-size: 12px;
+  font-weight: 200;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  opacity: 0;transition: opacity .5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  padding: 0 20px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  pointer-events: none;
+  color: #fff;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, .78);
+  &::before {
+    position: absolute;
+    bottom: 100%;
+    width: 0;
+    height: 0;
+    content: '';
+    border-right: 5px solid transparent;
+    border-bottom: 7px solid rgba(0, 0, 0, .78);
+    border-left: 5px solid transparent;
+  }
+}
+
 //end #marker switcher
 
 //end #TOOLS
@@ -442,11 +489,9 @@
   justify-content: center;
   align-items: center;
   width: 143px;
-  //height: 60px;
   margin-left: auto;
   background-image: linear-gradient(90deg, #b8c6af 2.8%, #b0c3b0 100%);
   @media (max-width: 1440px) and (orientation: landscape) {
-    //height: 50px;
     width: 125px;
   }
   @media (max-width: 1024px) and (orientation: landscape) {
@@ -454,6 +499,9 @@
   }
   @media (orientation: portrait) {
     width: 76px;
+  }
+  @media (max-width: 375px) {
+    width: 60px;
   }
   .lang {
     transform: translateX(-11px);
@@ -486,6 +534,9 @@
         top: 16px;
       }
     }
+    @media (max-width: 375px) {
+      width: 60px;
+    }
   }
   .lang__item {
     @media (max-width: 1024px) and (orientation: landscape) {
@@ -497,6 +548,7 @@
       transform: translateY(-12px);
       text-align: center;
       border-radius: 0 0 10px 10px;
+      background-color: #fff;
       box-shadow: 0 0 20px rgba(0, 79, 110, .3);
       &.active {
         z-index: 10;
@@ -516,6 +568,7 @@
       transform: translateY(-12px);
       text-align: center;
       border-radius: 0 0 10px 10px;
+      background-color: #fff;
       box-shadow: 0 0 20px rgba(0, 79, 110, .3);
       &.active {
         z-index: 10;

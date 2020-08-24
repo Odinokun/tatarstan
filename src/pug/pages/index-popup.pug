@@ -1,0 +1,21 @@
+extends ../_template
+
+block variables
+  - var title       = 'Истории Татарстана'
+  - var description = 'Истории Татарстана'
+  - var ogtitle     = 'Истории Татарстана'
+  - var ogimage     = 'assets/img/social.jpg'
+
+block content
+  .main-wrap
+    //begin content
+    main.main.index
+      include ../elements/panel
+      #map
+    //end content
+
+    include ../elements/popup
+    include ../sections/scripts
+    script(src="https://api-maps.yandex.ru/2.1/?apikey=d9063b73-cd43-48f8-b594-e35195e20ef2&lang=ru_RU")
+    script(src='assets/js/uncompressed.js')
+    script(src='assets/js/temp-menu.js')
