@@ -89,7 +89,20 @@
       <!--end content-->
       <!--begin popup-->
       <div class="popup">
-        <div class="popup__video" id="video-popup__iframe" data-youtube="A7U527zhAvY"></div><a class="popup__close" href="#">поехали!</a>
+        <div class="popup__video popup__video--landscape-desktop">
+          <video width="400" height="300" loop="" muted="" autoplay="">
+            <source src="assets/video/16-9-horizontal.mp4" type="video/mp4;">
+            <source src="assets/video/16-9-horizontal.webm" type="video/webm;">
+          </video>
+        </div>
+        <div class="popup__video popup__video--portrait-desktop">
+          <video width="400" height="300" loop="" muted="" autoplay="">
+            <source src="assets/video/16-9-vertical.mp4" type="video/mp4;">
+            <source src="assets/video/16-9-vertical.webm" type="video/webm;">
+          </video>
+        </div>
+        <div class="popup__mobile-video popup__mobile-video--landscape" data-youtube="8GbividBYY8"></div>
+        <div class="popup__mobile-video popup__mobile-video--portrait" data-youtube="9fcrxD1CcFI"></div><a class="popup__close" href="#">поехали!</a>
       </div>
       <!--end popup-->
       <script src="assets/js/foundation.js"></script>

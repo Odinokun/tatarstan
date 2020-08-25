@@ -2,16 +2,15 @@ ymaps.ready(init);
 
 function init() {
   // координаты смещения иконки относительно её "ножки" (точки привязки).
-  let x1 = 0;
-  let y1 = 0;
+  let x1 = 20;
+  let y1 = 15;
   // координаты смещения иконки относительно её "ножки" (точки привязки) - при наведении.
-  let x2 = 0;
-  let y2 = 0;
+  let x2 = 20;
+  let y2 = 15;
 
   let myMap = new ymaps.Map('map', {
       center: [55.795691, 49.124787],
-      // zoom: 13
-      zoom: 6
+      zoom: 13
     }, {
       searchControlProvider: 'yandex#search'
     }),
@@ -34,8 +33,8 @@ function init() {
     objectManagerUser.objects.options.set({
       hideIconOnBalloonOpen: false, // Убираем скрытие иконки при открытом балуне
       iconLayout: 'default#image', // Необходимо указать данный тип макета.
-      iconImageHref: 'assets/img/marker-user.svg', // Своё изображение иконки метки.
-      iconImageSize: [75, 75], // Размеры метки.
+      iconImageHref: 'assets/img/marker-user-circle.svg', // Своё изображение иконки метки.
+      iconImageSize: [36, 36], // Размеры метки.
       iconImageOffset: [x1, y1], // Смещение иконки относительно её "ножки" (точки привязки).
       cursor: 'inherit' //Кастомный курсор при наведении
     });
@@ -51,8 +50,8 @@ function init() {
     objectManager.objects.options.set({
       hideIconOnBalloonOpen: false, // Убираем скрытие иконки при открытом балуне
       iconLayout: 'default#image', // Необходимо указать данный тип макета.
-      iconImageHref: 'assets/img/marker-green.svg', // Своё изображение иконки метки.
-      iconImageSize: [75, 75], // Размеры метки.
+      iconImageHref: 'assets/img/marker-green-circle.svg', // Своё изображение иконки метки.
+      iconImageSize: [36, 36], // Размеры метки.
       iconImageOffset: [x1, y1], // Смещение иконки относительно её "ножки" (точки привязки).
       cursor: 'inherit' //Кастомный курсор при наведении
     });
@@ -74,16 +73,16 @@ function init() {
 
       objectManager.objects.setObjectOptions(objectId, {
         iconLayout: 'default#image', // Необходимо указать данный тип макета.
-        iconImageHref: 'assets/img/marker-hover.svg', // Своё изображение иконки метки.
-        iconImageSize: [75, 75], // Размеры метки.
+        iconImageHref: 'assets/img/marker-hover-circle.svg', // Своё изображение иконки метки.
+        iconImageSize: [36, 36], // Размеры метки.
         iconImageOffset: [x2, y2], // Смещение иконки относительно её "ножки" (точки привязки).
         cursor: 'inherit' //Кастомный курсор при наведении
       });
     } else {
       objectManager.objects.setObjectOptions(objectId, {
         iconLayout: 'default#image', // Необходимо указать данный тип макета.
-        iconImageHref: 'assets/img/marker-green.svg', // Своё изображение иконки метки.
-        iconImageSize: [75, 75], // Размеры метки.
+        iconImageHref: 'assets/img/marker-green-circle.svg', // Своё изображение иконки метки.
+        iconImageSize: [36, 36], // Размеры метки.
         iconImageOffset: [x1, y1], // Смещение иконки относительно её "ножки" (точки привязки).
         cursor: 'inherit' //Кастомный курсор при наведении
       });
@@ -102,16 +101,16 @@ function init() {
 
       objectManagerUser.objects.setObjectOptions(objectId, {
         iconLayout: 'default#image', // Необходимо указать данный тип макета.
-        iconImageHref: 'assets/img/marker-hover.svg', // Своё изображение иконки метки.
-        iconImageSize: [75, 75], // Размеры метки.
+        iconImageHref: 'assets/img/marker-hover-circle.svg', // Своё изображение иконки метки.
+        iconImageSize: [36, 36], // Размеры метки.
         iconImageOffset: [x2, y2], // Смещение иконки относительно её "ножки" (точки привязки).
         cursor: 'inherit' //Кастомный курсор при наведении
       });
     } else {
       objectManagerUser.objects.setObjectOptions(objectId, {
         iconLayout: 'default#image', // Необходимо указать данный тип макета.
-        iconImageHref: 'assets/img/marker-user.svg', // Своё изображение иконки метки.
-        iconImageSize: [75, 75], // Размеры метки.
+        iconImageHref: 'assets/img/marker-user-circle.svg', // Своё изображение иконки метки.
+        iconImageSize: [36, 36], // Размеры метки.
         iconImageOffset: [x1, y1], // Смещение иконки относительно её "ножки" (точки привязки).
         cursor: 'inherit' //Кастомный курсор при наведении
       });
@@ -194,25 +193,40 @@ function init() {
     }
   });
   //end фильтр меток по переключателю
-
 }
 
-
-function popupVideo() {
-  let dataYoutube = $('#video-popup__iframe').attr('data-youtube');
-
-
-  $('#video-popup__iframe').html('<iframe src="https://www.youtube.com/embed/' + dataYoutube + '?controls=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+function popupVideoLandscape() {
+  let dataYoutube = $('.popup__mobile-video--landscape').attr('data-youtube');
+$('.popup__mobile-video--landscape').html('<iframe src="https://www.youtube.com/embed/' + dataYoutube + '?controls=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
   $('.popup').fadeIn();
-
 
   $('.popup__close').on('click', function (e) {
     e.preventDefault();
 
     $('.popup').fadeOut();
-    $('#video-popup__iframe iframe').remove();
+    $('.popup__mobile-video--landscape iframe').remove();
   });
 }
+popupVideoLandscape();
 
-popupVideo();
+function popupVideoPortrait() {
+  let dataYoutube = $('.popup__mobile-video--portrait').attr('data-youtube');
+$('.popup__mobile-video--portrait').html('<iframe src="https://www.youtube.com/embed/' + dataYoutube + '?controls=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+  $('.popup').fadeIn();
 
+  $('.popup__close').on('click', function (e) {
+    e.preventDefault();
+
+    $('.popup').fadeOut();
+    $('.popup__mobile-video--portrait iframe').remove();
+  });
+}
+popupVideoPortrait();
+
+
+$('.popup__close').on('click', function (e) {
+  e.preventDefault();
+
+  $('.popup').fadeOut();
+  $('.popup').find('iframe').fadeOut();
+});
