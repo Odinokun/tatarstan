@@ -2,15 +2,29 @@ ymaps.ready(init);
 
 function init() {
   // координаты смещения иконки относительно её "ножки" (точки привязки).
-  let x1 = 20;
-  let y1 = 15;
+  let x1 = -25;
+  let y1 = -90;
   // координаты смещения иконки относительно её "ножки" (точки привязки) - при наведении.
-  let x2 = 20;
-  let y2 = 15;
+  // let x2 = -25;
+  let x2 = 0;
+  // let y2 = -20;
+  let y2 = -70;
+  //размер иконки
+  let w1 = 50;
+  let h1 = 90;
+  //размер иконки при наведении
+  let w2 = 100;
+  let h2 = 140;
+
+  let userIcon = 'assets/img/marker-user-new.svg';
+  let defaultIcon = 'assets/img/marker-green-new.svg';
+  let hoverIcon = 'assets/img/marker-hover-new.svg';
 
   let myMap = new ymaps.Map('map', {
       center: [55.795691, 49.124787],
+      // center: [55.812906, 49.108148],
       zoom: 13
+      // zoom: 16
     }, {
       searchControlProvider: 'yandex#search'
     }),
@@ -33,8 +47,8 @@ function init() {
     objectManagerUser.objects.options.set({
       hideIconOnBalloonOpen: false, // Убираем скрытие иконки при открытом балуне
       iconLayout: 'default#image', // Необходимо указать данный тип макета.
-      iconImageHref: 'assets/img/marker-user-circle.svg', // Своё изображение иконки метки.
-      iconImageSize: [36, 36], // Размеры метки.
+      iconImageHref: userIcon, // Своё изображение иконки метки.
+      iconImageSize: [w1, h1], // Размеры метки.
       iconImageOffset: [x1, y1], // Смещение иконки относительно её "ножки" (точки привязки).
       cursor: 'inherit' //Кастомный курсор при наведении
     });
@@ -50,8 +64,8 @@ function init() {
     objectManager.objects.options.set({
       hideIconOnBalloonOpen: false, // Убираем скрытие иконки при открытом балуне
       iconLayout: 'default#image', // Необходимо указать данный тип макета.
-      iconImageHref: 'assets/img/marker-green-circle.svg', // Своё изображение иконки метки.
-      iconImageSize: [36, 36], // Размеры метки.
+      iconImageHref: defaultIcon, // Своё изображение иконки метки.
+      iconImageSize: [w1, h1], // Размеры метки.
       iconImageOffset: [x1, y1], // Смещение иконки относительно её "ножки" (точки привязки).
       cursor: 'inherit' //Кастомный курсор при наведении
     });
@@ -73,16 +87,16 @@ function init() {
 
       objectManager.objects.setObjectOptions(objectId, {
         iconLayout: 'default#image', // Необходимо указать данный тип макета.
-        iconImageHref: 'assets/img/marker-hover-circle.svg', // Своё изображение иконки метки.
-        iconImageSize: [36, 36], // Размеры метки.
+        iconImageHref: hoverIcon, // Своё изображение иконки метки.
+        iconImageSize: [w2, h2], // Размеры метки.
         iconImageOffset: [x2, y2], // Смещение иконки относительно её "ножки" (точки привязки).
         cursor: 'inherit' //Кастомный курсор при наведении
       });
     } else {
       objectManager.objects.setObjectOptions(objectId, {
         iconLayout: 'default#image', // Необходимо указать данный тип макета.
-        iconImageHref: 'assets/img/marker-green-circle.svg', // Своё изображение иконки метки.
-        iconImageSize: [36, 36], // Размеры метки.
+        iconImageHref: defaultIcon, // Своё изображение иконки метки.
+        iconImageSize: [w1, h1], // Размеры метки.
         iconImageOffset: [x1, y1], // Смещение иконки относительно её "ножки" (точки привязки).
         cursor: 'inherit' //Кастомный курсор при наведении
       });
@@ -101,16 +115,16 @@ function init() {
 
       objectManagerUser.objects.setObjectOptions(objectId, {
         iconLayout: 'default#image', // Необходимо указать данный тип макета.
-        iconImageHref: 'assets/img/marker-hover-circle.svg', // Своё изображение иконки метки.
-        iconImageSize: [36, 36], // Размеры метки.
+        iconImageHref: hoverIcon, // Своё изображение иконки метки.
+        iconImageSize: [w2, h2], // Размеры метки.
         iconImageOffset: [x2, y2], // Смещение иконки относительно её "ножки" (точки привязки).
         cursor: 'inherit' //Кастомный курсор при наведении
       });
     } else {
       objectManagerUser.objects.setObjectOptions(objectId, {
         iconLayout: 'default#image', // Необходимо указать данный тип макета.
-        iconImageHref: 'assets/img/marker-user-circle.svg', // Своё изображение иконки метки.
-        iconImageSize: [36, 36], // Размеры метки.
+        iconImageHref: userIcon, // Своё изображение иконки метки.
+        iconImageSize: [w1, h1], // Размеры метки.
         iconImageOffset: [x1, y1], // Смещение иконки относительно её "ножки" (точки привязки).
         cursor: 'inherit' //Кастомный курсор при наведении
       });
@@ -194,39 +208,3 @@ function init() {
   });
   //end фильтр меток по переключателю
 }
-
-function popupVideoLandscape() {
-  let dataYoutube = $('.popup__mobile-video--landscape').attr('data-youtube');
-$('.popup__mobile-video--landscape').html('<iframe src="https://www.youtube.com/embed/' + dataYoutube + '?controls=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
-  $('.popup').fadeIn();
-
-  $('.popup__close').on('click', function (e) {
-    e.preventDefault();
-
-    $('.popup').fadeOut();
-    $('.popup__mobile-video--landscape iframe').remove();
-  });
-}
-popupVideoLandscape();
-
-function popupVideoPortrait() {
-  let dataYoutube = $('.popup__mobile-video--portrait').attr('data-youtube');
-$('.popup__mobile-video--portrait').html('<iframe src="https://www.youtube.com/embed/' + dataYoutube + '?controls=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
-  $('.popup').fadeIn();
-
-  $('.popup__close').on('click', function (e) {
-    e.preventDefault();
-
-    $('.popup').fadeOut();
-    $('.popup__mobile-video--portrait iframe').remove();
-  });
-}
-popupVideoPortrait();
-
-
-$('.popup__close').on('click', function (e) {
-  e.preventDefault();
-
-  $('.popup').fadeOut();
-  $('.popup').find('iframe').fadeOut();
-});

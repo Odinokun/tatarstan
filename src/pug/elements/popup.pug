@@ -4,22 +4,14 @@
     video(width='400', height='300', loop="" muted="" autoplay="")
       source(src='assets/video/16-9-horizontal.mp4', type='video/mp4;')
       source(src='assets/video/16-9-horizontal.webm', type='video/webm;')
-  //-.popup__video.popup__video--landscape-mobile
-    video(width='400', height='300', loop="" muted="" autoplay="" controls="")
-      source(src='assets/video/16-9-horizontal.mp4', type='video/mp4;')
-      source(src='assets/video/16-9-horizontal.webm', type='video/webm;')
 
   .popup__video.popup__video--portrait-desktop
     video(width='400', height='300', loop="" muted="" autoplay="")
       source(src='assets/video/16-9-vertical.mp4', type='video/mp4;')
       source(src='assets/video/16-9-vertical.webm', type='video/webm;')
-  //-.popup__video.popup__video--portrait-mobile
-    video(width='400', height='300', loop="" muted="" autoplay="" controls="")
-      source(src='assets/video/16-9-vertical.mp4', type='video/mp4;')
-      source(src='assets/video/16-9-vertical.webm', type='video/webm;')
 
-  .popup__mobile-video.popup__mobile-video--landscape(data-youtube='8GbividBYY8')
-  .popup__mobile-video.popup__mobile-video--portrait(data-youtube='9fcrxD1CcFI')
+  .popup__mobile-video
+    include anim-popup
 
   a(href="#").popup__close поехали!
 //end popup
